@@ -13,10 +13,10 @@ function getUserChoice(){
     let userChoice;
     while(!gameOption.includes(userChoice)){
         userChoice = prompt("GAME TIME:: Rock, Paper or Scissors")
-        // if (userChoice == null){
-        //     alert('GAME EXITED');
-        //     return null;
-        // }
+        if (userChoice == null){
+            alert('GAME EXITED');
+            return null;
+        }
         userChoice = userChoice.toLowerCase();
     }
     return userChoice;
@@ -48,11 +48,17 @@ function playRound( ){
     const computerChoice = getComputerChoice();
     console.log('YOU:: ' + userChoice)
     console.log('COMPUTER:: ' + computerChoice)
+    
+    //return null to stop the code from running if user choice return null
+    if (userChoice === null){
+        return null;
+    }
 
-    //first check if user computer match
+    //first check if user & computer match
     if (userChoice === computerChoice) {
         //its draw
         console.log("its a draw");
+        //exit the code
         return;
     }
 
@@ -111,7 +117,11 @@ function playRound( ){
 
 function playGame(){
     for (let i = 0; i < rounds; i++){
-        playRound();
+        if (playRound() === null){
+            console.log("GAME EXITED RELOAD THE PAGE AND MAKE SURE YOU input: " + gameOption)
+            return;
+        }
+        
     }
 
     console.log('YOUR SCORE IS:: ' + humanScore )
