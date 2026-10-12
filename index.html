@@ -4,8 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rock paper scissors</title>
+    <style>
+        button{
+            background-color: rgb(38, 38, 203);
+            border-radius: 16%;
+            color: aliceblue;
+            padding: 8px;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1 style="text-align: center;">Rock paper scissors game</h1>
+    </header>
+    <main>
+        <div>
+            <label for="rps">Pick:</label>
+            <select name="rps" id="rps">
+                <option value=""></option>
+                <option value="rock">Rock</option>
+                <option value="scissors">Scissors</option>
+                <option value="paper">Paper</option>
+            </select>
+            <button id="play-round">playround</button>
+        </div>
+
+        <div id="final-round">
+            <div id="score-tracker">
+                <h3 style="text-align: center;">Score Tracker</h3>
+                <p id="user-score">You:: </p>
+                <p id="Computer-score">Computer:: </p>
+            </div>
+
+        </div>
+
+        <div id="round-result">
+            <h3 style="text-align: center;">Rounds Result</h3>
+            
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
